@@ -13,9 +13,17 @@ const connect = function() {
   conn.on('data', (data) => {
     console.log('Server says: ', data);
   });
-
+  // const direction = ["Move: up", "Move: up", "Move: up", "Move: up"];
   conn.on('connect', () => {
     conn.write("Name: BOB");
+    // let count = 50;
+    // for (let dir in direction) {
+    //   setTimeout(() => {
+    //     conn.write(direction[dir++]);
+
+    //   }, count);
+    //   count += 50;
+    // }
   });
 
   return conn;
